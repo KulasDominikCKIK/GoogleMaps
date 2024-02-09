@@ -1,54 +1,71 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var images = [
-        { id: "1", src: "images/1.jpg" },
-        { id: "2", src: "images/2.jpg" },
-        { id: "3", src: "images/3.png" },
-        { id: "4", src: "images/4.png" },
-        { id: "5", src: "images/5.png" }
-    ];
-
-    var currentImageIndex = 0;
-
+    var img1 = document.getElementById("1");
+    var img2 = document.getElementById("2");
+    var img3 = document.getElementById("3");
+    var img4 = document.getElementById("4");
+    var img5 = document.getElementById("5");
     var dot = document.getElementById("dot");
     var back = document.getElementById("back");
 
-    function showImage(index) {
-        images.forEach(function(image, i) {
-            var imgElement = document.getElementById(image.id);
-            if (i === index) {
-                imgElement.src = image.src;
-                imgElement.style.display = "block";
-            } else {
-                imgElement.style.display = "none";
-            }
-        });
-    }
+    img1.style.display = "block";
+    img2.style.display = "none";
+    img3.style.display = "none";
+    img4.style.display = "none";
+    img5.style.display = "none";
 
-    function nextImage() {
-        currentImageIndex++;
-        if (currentImageIndex >= images.length) {
-            currentImageIndex = images.length - 1;
+    dot.addEventListener("click", function() {
+        if (img1.style.display === "block") {
+            img1.src = "images/2.jpg";
+            back.style.display = "block";
+            dot.style.display = "block";
+            img2.style.display = "block";
+            img1.style.display = "none";
+        } else if (img2.style.display === "block") {
+            img2.src = "images/3.png";
+            img3.style.display = "block";
+            img2.style.display = "none";
+            back.style.display = "block";
+            dot.style.display = "block";
+        } else if (img3.style.display == "block") {
+            img3.src = "images/4.png";
+            img3.style.display = "none";
+            img4.style.display = "block";
+            back.style.display = "block";
+            dot.style.display = "block";
+        } else if (img4.style.display == "block") {
+            img4.src = "images/5.png";
+            img4.style.display = "none";
+            img5.style.display = "block";
+            back.style.display = "block";
+            dot.style.display = "none";
         }
-        showImage(currentImageIndex);
-        updateControls();
-    }
+    });
 
-    function prevImage() {
-        currentImageIndex--;
-        if (currentImageIndex < 0) {
-            currentImageIndex = 0;
+    back.addEventListener("click", function() {
+        if (img2.style.display === "block") {
+            img1.src = "images/1.jpg";
+            back.style.display = "none";
+            dot.style.display = "block";
+            img2.style.display = "none";
+            img1.style.display = "block";
+        } else if (img3.style.display === "block") {
+            img2.src = "images/2.jpg";
+            img2.style.display = "block";
+            img3.style.display = "none";
+            back.style.display = "block";
+            dot.style.display = "block";
+        } else if (img4.style.display == "block") {
+            img3.src = "images/3.png";
+            img3.style.display = "block";
+            img4.style.display = "none";
+            back.style.display = "block";
+            dot.style.display = "block";
+        } else if (img5.style.display == "block") {
+            img4.src = "images/4.png";
+            img4.style.display = "block";
+            img5.style.display = "none";
+            back.style.display = "block";
+            dot.style.display = "block";
         }
-        showImage(currentImageIndex);
-        updateControls();
-    }
-
-    function updateControls() {
-        back.style.display = currentImageIndex > 0 ? "block" : "none";
-        dot.style.display = currentImageIndex < images.length - 1 ? "block" : "none";
-    }
-
-    dot.addEventListener("click", nextImage);
-    back.addEventListener("click", prevImage);
-    showImage(currentImageIndex);
-    updateControls();
+    });
 });

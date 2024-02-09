@@ -4,7 +4,7 @@ This a project for my Programming class **@** CKIK
 
 # Last commit
 
-- I fixed the WHOLE javascript because it was only working with 2 pictures but I figured out how to work with multiple images.
+- I switched back to the original JS code because i realised I need to go left and right too :(
 
 # Plans
 
@@ -19,3 +19,4 @@ This a project for my Programming class **@** CKIK
 - w3schools.com - I used it for something I don't remember but it's not in anymore so it doesn't matter.
 - stackoverflow.com - For some javascript help at the beggining.
 - validator.w3.org - For the validation of the HTML code.
+- chatgpt.com - To understand some javascript code.
