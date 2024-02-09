@@ -4,7 +4,7 @@ This a project for my Programming class **@** CKIK
 
 # Last commit
 
-- I made the demo version with my house (Works pretty well)
+- I fixed the WHOLE javascript because it was only working with 2 pictures but I figured out how to work with multiple images.
 
 # Plans
 
@@ -13,3 +13,9 @@ This a project for my Programming class **@** CKIK
 # TODO
 
 - Shoot photos of the school and implement it in the code.
+
+# Sources I used
+
+- w3schools.com - I used it for something I don't remember but it's not in anymore so it doesn't matter.
+- stackoverflow.com - For some javascript help at the beggining.
+- validator.w3.org - For the validation of the HTML code.

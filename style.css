@@ -12,6 +12,7 @@ img {
     max-height: 100%;
     width: auto;
     height: auto;
+    user-select: none;
 }
 
 .dot {
