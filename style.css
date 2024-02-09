@@ -1,0 +1,41 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.back {
+    position: absolute;
+    bottom: 20px; /* Némi távolság hozzáadva az aljától */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent; /* Kicsit szélesebb nyíl */
+    border-right: 15px solid transparent; /* Kicsit szélesebb nyíl */
+    border-top: 20px solid rgba(128, 128, 128, 0.8); /* Kicsit sötétebb szürke */
+    cursor: pointer;
+    display: none;
+}

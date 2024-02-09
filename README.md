@@ -4,14 +4,12 @@ This a project for my Programming class **@** CKIK
 
 # Last commit
 
-- I made the default files.
-- I set up the git repository.
-- 
+- I made the demo version with my house (Works pretty well)
 
 # Plans
 
-- Make more utility class from my math class and code it down.
+- Go to school at the weekends and shoot some photos of the school.
 
 # TODO
 
-- CURRENTLY, everything is as I planned.
+- Shoot photos of the school and implement it in the code.
