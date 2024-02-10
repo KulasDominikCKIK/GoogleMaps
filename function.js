@@ -1,71 +1,97 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var img1 = document.getElementById("1");
-    var img2 = document.getElementById("2");
-    var img3 = document.getElementById("3");
-    var img4 = document.getElementById("4");
-    var img5 = document.getElementById("5");
-    var dot = document.getElementById("dot");
+    var start = document.getElementById("1");
+    var start_left = document.getElementById("2");
+    var start_right = document.getElementById("3");
+    var start_forward = document.getElementById("4");
+    var sleft_forward = document.getElementById("5");
+    var forward = document.getElementById("forward");
+    var left = document.getElementById("left");
+    var right = document.getElementById("right");
     var back = document.getElementById("back");
 
-    img1.style.display = "block";
-    img2.style.display = "none";
-    img3.style.display = "none";
-    img4.style.display = "none";
-    img5.style.display = "none";
+    start.style.display = "block";
+    start_forward.style.display = "none";
+    start_left.style.display = "none";
+    start_right.style.display = "none";
+    sleft_forward.style.display = "none";
 
-    dot.addEventListener("click", function() {
-        if (img1.style.display === "block") {
-            img1.src = "images/2.jpg";
+    forward.addEventListener("click", function() {
+        if (start.style.display === "block") {
+            start.src = "images/start_.jpg";
             back.style.display = "block";
-            dot.style.display = "block";
-            img2.style.display = "block";
-            img1.style.display = "none";
-        } else if (img2.style.display === "block") {
-            img2.src = "images/3.png";
-            img3.style.display = "block";
-            img2.style.display = "none";
+            forward.style.display = "none";
+            left.style.display = "none";
+            right.style.display = "none";
+            start_forward.style.display = "block";
+            start.style.display = "none"; //Starttól előre
+        } else if (start_left.style.display === "block") {
+            start_left.src = "images/sleft_forward.jpg";
+            forward.style.display = "none";
+            left.style.display = "none";
+            right.style.display = "none";
             back.style.display = "block";
-            dot.style.display = "block";
-        } else if (img3.style.display == "block") {
-            img3.src = "images/4.png";
-            img3.style.display = "none";
-            img4.style.display = "block";
+            sleft_forward.style.display = "block";
+            start_left.style.display = "none";
+        }
+    });
+
+    left.addEventListener("click", function() {
+        if (start.style.display === "block") {
+            start.src = "images/start_left.jpg";
             back.style.display = "block";
-            dot.style.display = "block";
-        } else if (img4.style.display == "block") {
-            img4.src = "images/5.png";
-            img4.style.display = "none";
-            img5.style.display = "block";
+            forward.style.display = "block";
+            left.style.display = "none";
+            right.style.display = "none";
+            start_left.style.display = "block";
+            start.style.display = "none"; //Starttól balra
+        }
+    });
+
+    right.addEventListener("click", function() {
+        if (start.style.display === "block") {
+            start.src = "images/start_right.jpg";
             back.style.display = "block";
-            dot.style.display = "none";
+            forward.style.display = "none";
+            left.style.display = "none";
+            right.style.display = "none";
+            start_right.style.display = "block";
+            start.style.display = "none"; //Starttól jobbra
         }
     });
 
     back.addEventListener("click", function() {
-        if (img2.style.display === "block") {
-            img1.src = "images/1.jpg";
+        if (start_forward.style.display === "block") {
+            start_forward.src = "images/start.jpg";
             back.style.display = "none";
-            dot.style.display = "block";
+            forward.style.display = "block";
+            left.style.display = "block";
+            right.style.display = "block";
             img2.style.display = "none";
             img1.style.display = "block";
-        } else if (img3.style.display === "block") {
-            img2.src = "images/2.jpg";
-            img2.style.display = "block";
-            img3.style.display = "none";
+        } else if (start_right.style.display === "block") {
+            start.src = "images/start.jpg";
+            start.style.display = "block";
+            start_right.style.display = "none";
+            back.style.display = "none";
+            forward.style.display = "block";
+            left.style.display = "block";
+            right.style.display = "block";
+        } else if (start_left.style.display == "block") {
+            start.src = "images/start.jpg";
+            start.style.display = "block";
+            start_left.style.display = "none";
+            back.style.display = "none";
+            forward.style.display = "block";
+            left.style.display = "block";
+            right.style.display = "block";
+        } else if (sleft_forward.style.display == "block") {
+            start_left.src = "images/start_left.jpg";
+            start_left.style.display = "block";
+            sleft_forward.style.display = "none";
             back.style.display = "block";
-            dot.style.display = "block";
-        } else if (img4.style.display == "block") {
-            img3.src = "images/3.png";
-            img3.style.display = "block";
-            img4.style.display = "none";
-            back.style.display = "block";
-            dot.style.display = "block";
-        } else if (img5.style.display == "block") {
-            img4.src = "images/4.png";
-            img4.style.display = "block";
-            img5.style.display = "none";
-            back.style.display = "block";
-            dot.style.display = "block";
+            forward.style.display = "block";
+            left.style.display = "none";
+            right.style.display = "none";
         }
     });
 });

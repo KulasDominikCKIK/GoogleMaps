@@ -15,16 +15,48 @@ img {
     user-select: none;
 }
 
-.dot {
-    position: absolute;
-    top: 50%;
+.forward {
+    position: fixed;
+    bottom: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background-color: rgba(128, 128, 128, 0.5);
-    border-radius: 50%;
+    transform: translate(-50%, 50%) rotate(180deg);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid rgba(128, 128, 128, 0.9);
     cursor: pointer;
+    display: block;
+}
+
+.left {
+    position: fixed;
+    bottom: 50%;
+    left: calc(50% - 70px - 20px);
+    margin-right: -20px;
+    transform: translate(-50%, 50%) rotate(0deg);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid rgba(128, 128, 128, 0.9);
+    cursor: pointer;
+    display: block;
+}
+
+.right {
+    position: fixed;
+    bottom: 50%;
+    right: calc(50% - 70px - 20px);
+    margin-right: -20px;
+    transform: translate(-50%, 50%) rotate(180deg);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid rgba(128, 128, 128, 0.9);
+    cursor: pointer;
+    display: block;
 }
 
 .back {
@@ -36,7 +68,8 @@ img {
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-top: 20px solid rgba(128, 128, 128, 0.8);
+    border-top: 20px solid rgba(128, 128, 128, 0.9);
     cursor: pointer;
     display: none;
 }
+

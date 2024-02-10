@@ -4,7 +4,9 @@ This a project for my Programming class **@** CKIK
 
 # Last commit
 
-- I switched back to the original JS code because i realised I need to go left and right too :(
+- I made the left & right div.
+- I styled the left & right button.
+- I took some pictures in my house and coded it (it works but the js is crap).
 
 # Plans
 
@@ -19,4 +21,3 @@ This a project for my Programming class **@** CKIK
 - w3schools.com - I used it for something I don't remember but it's not in anymore so it doesn't matter.
 - stackoverflow.com - For some javascript help at the beggining.
 - validator.w3.org - For the validation of the HTML code.
-- chatgpt.com - To understand some javascript code.
