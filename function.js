@@ -18,80 +18,86 @@ document.addEventListener("DOMContentLoaded", function() {
     forward.addEventListener("click", function() {
         if (start.style.display === "block") {
             start.src = "images/start_.jpg";
-            back.style.display = "block";
-            forward.style.display = "none";
-            left.style.display = "none";
-            right.style.display = "none";
-            start_forward.style.display = "block";
-            start.style.display = "none"; //Starttól előre
+            hideLeftAndRight();
+            showBackAndHideForward();
+            showImageAndHideImage(start.id, start_forward.id);
         } else if (start_left.style.display === "block") {
             start_left.src = "images/sleft_forward.jpg";
-            forward.style.display = "none";
-            left.style.display = "none";
-            right.style.display = "none";
-            back.style.display = "block";
-            sleft_forward.style.display = "block";
-            start_left.style.display = "none";
+            hideLeftAndRight();
+            showBackAndHideForward();
+            showImageAndHideImage(start.id, sleft_forward.id);
         }
     });
 
     left.addEventListener("click", function() {
         if (start.style.display === "block") {
             start.src = "images/start_left.jpg";
-            back.style.display = "block";
-            forward.style.display = "block";
-            left.style.display = "none";
-            right.style.display = "none";
-            start_left.style.display = "block";
-            start.style.display = "none"; //Starttól balra
+            showForwardAndBack();
+            hideLeftAndRight();
+            showImageAndHideImage(start.id, start_left.id);
         }
     });
 
     right.addEventListener("click", function() {
         if (start.style.display === "block") {
             start.src = "images/start_right.jpg";
-            back.style.display = "block";
-            forward.style.display = "none";
-            left.style.display = "none";
-            right.style.display = "none";
-            start_right.style.display = "block";
-            start.style.display = "none"; //Starttól jobbra
+            showBackAndHideForward();
+            hideLeftAndRight();
+            showImageAndHideImage(start.id, start_right.id);
         }
     });
 
     back.addEventListener("click", function() {
         if (start_forward.style.display === "block") {
-            start_forward.src = "images/start.jpg";
-            back.style.display = "none";
-            forward.style.display = "block";
-            left.style.display = "block";
-            right.style.display = "block";
-            img2.style.display = "none";
-            img1.style.display = "block";
+            start.src = "images/start.jpg";
+            showLeftAndRight();
+            showForwardAndHideBack();
+            showImageAndHideImage(start_forward.id, start.id);
         } else if (start_right.style.display === "block") {
             start.src = "images/start.jpg";
-            start.style.display = "block";
-            start_right.style.display = "none";
-            back.style.display = "none";
-            forward.style.display = "block";
-            left.style.display = "block";
-            right.style.display = "block";
+            showImageAndHideImage(start_right.id, start.id);
+            showForwardAndHideBack();
+            showLeftAndRight();
         } else if (start_left.style.display == "block") {
             start.src = "images/start.jpg";
-            start.style.display = "block";
-            start_left.style.display = "none";
-            back.style.display = "none";
-            forward.style.display = "block";
-            left.style.display = "block";
-            right.style.display = "block";
+            showImageAndHideImage(start_left.id, start.id);
+            showForwardAndHideBack();
+            showLeftAndRight();
         } else if (sleft_forward.style.display == "block") {
             start_left.src = "images/start_left.jpg";
-            start_left.style.display = "block";
-            sleft_forward.style.display = "none";
-            back.style.display = "block";
-            forward.style.display = "block";
-            left.style.display = "none";
-            right.style.display = "none";
+            showImageAndHideImage(sleft_forward.id, start_left.id);
+            showForwardAndBack();
+            hideLeftAndRight();
         }
     });
+
+    function hideLeftAndRight() {
+        left.style.display = "none";
+        right.style.display = "none";
+    }
+
+    function showForwardAndHideBack() {
+        forward.style.display = "block";
+        back.style.display = "none";
+    }
+
+    function showBackAndHideForward() {
+        forward.style.display = "none";
+        back.style.display = "block";
+    }
+
+    function showLeftAndRight() {
+        left.style.display = "block";
+        right.style.display = "block";
+    }
+
+    function showForwardAndBack() {
+        forward.style.display = "block";
+        back.style.display = "block";
+    }
+
+    function showImageAndHideImage(image1Id, image2Id) {
+        document.getElementById(image1Id).style.display = "none";
+        document.getElementById(image2Id).style.display = "block";
+    }
 });

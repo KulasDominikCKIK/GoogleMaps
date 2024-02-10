@@ -4,9 +4,7 @@ This a project for my Programming class **@** CKIK
 
 # Last commit
 
-- I made the left & right div.
-- I styled the left & right button.
-- I took some pictures in my house and coded it (it works but the js is crap).
+- Cleaned up a bit the function.js
 
 # Plans
 
