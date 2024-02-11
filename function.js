@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
             start_left.src = "images/sleft_forward.jpg";
             hideLeftAndRight();
             showBackAndHideForward();
-            showImageAndHideImage(start.id, sleft_forward.id);
+            showImageAndHideImage(start_left.id, sleft_forward.id);
         }
     });
 
