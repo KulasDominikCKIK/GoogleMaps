@@ -1,103 +1,145 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var start = document.getElementById("1");
-    var start_left = document.getElementById("2");
-    var start_right = document.getElementById("3");
-    var start_forward = document.getElementById("4");
-    var sleft_forward = document.getElementById("5");
-    var forward = document.getElementById("forward");
-    var left = document.getElementById("left");
-    var right = document.getElementById("right");
-    var back = document.getElementById("back");
-
+    var images = {
+       "start_left": document.getElementById("2"),
+       "start_right": document.getElementById("3"),
+       "start_forward": document.getElementById("4"),
+       "sleft_forward": document.getElementById("5"),
+       "start_toilet_map": document.getElementById("6")
+    };
+ 
+    var buttons = {
+       "forward": document.getElementById("forward"),
+       "left": document.getElementById("left"),
+       "right": document.getElementById("right"),
+       "back": document.getElementById("back")
+    };
+ 
+ 
+    var maps = {
+       "toiletMap": document.querySelector('map[name="toilet"]')
+    }
+ 
     start.style.display = "block";
-    start_forward.style.display = "none";
-    start_left.style.display = "none";
-    start_right.style.display = "none";
-    sleft_forward.style.display = "none";
-
-    forward.addEventListener("click", function() {
-        if (start.style.display === "block") {
-            start.src = "images/start_.jpg";
-            hideLeftAndRight();
-            showBackAndHideForward();
-            showImageAndHideImage(start.id, start_forward.id);
-        } else if (start_left.style.display === "block") {
-            start_left.src = "images/sleft_forward.jpg";
-            hideLeftAndRight();
-            showBackAndHideForward();
-            showImageAndHideImage(start_left.id, sleft_forward.id);
-        }
+    Object.values(images).forEach(image => image.style.display = "none");
+    Object.values(maps).forEach(map => map.style.display = "none");
+ 
+    buttons.forward.addEventListener("click", function () {
+       switch (true) {
+          case start.style.display === "block":
+             start.src = "images/start_.jpg";
+             showImageAndHideImage(start.id, images.start_forward.id);
+             hideLeftAndRight();
+             showBackAndHideForward();
+             break;
+          case images.start_left.style.display === "block":
+             images.start_left.src = "images/sleft_forward.jpg";
+             showImageAndHideImage(images.start_left.id, images.sleft_forward.id);
+             utils.hideLeftAndRight();
+             utils.showBackAndHideForward();
+             break;
+       }
     });
-
-    left.addEventListener("click", function() {
-        if (start.style.display === "block") {
-            start.src = "images/start_left.jpg";
-            showForwardAndBack();
-            hideLeftAndRight();
-            showImageAndHideImage(start.id, start_left.id);
-        }
+ 
+    buttons.left.addEventListener("click", function () {
+       switch (true) {
+          case start.style.display === "block":
+             start.src = "images/start_left.jpg";
+             showImageAndHideImage(start.id, images.start_left.id);
+             showForwardAndBack();
+             hideLeftAndRight();
+             break;
+       }
     });
-
-    right.addEventListener("click", function() {
-        if (start.style.display === "block") {
-            start.src = "images/start_right.jpg";
-            showBackAndHideForward();
-            hideLeftAndRight();
-            showImageAndHideImage(start.id, start_right.id);
-        }
+ 
+    buttons.right.addEventListener("click", function () {
+       switch (true) {
+          case start.style.display === "block":
+             start.src = "images/start_right.jpg";
+             showImageAndHideImage(start.id, images.start_right.id);
+             showBackAndHideForward();
+             hideLeftAndRight();
+             break;
+       }
     });
-
-    back.addEventListener("click", function() {
-        if (start_forward.style.display === "block") {
-            start.src = "images/start.jpg";
-            showLeftAndRight();
-            showForwardAndHideBack();
-            showImageAndHideImage(start_forward.id, start.id);
-        } else if (start_right.style.display === "block") {
-            start.src = "images/start.jpg";
-            showImageAndHideImage(start_right.id, start.id);
-            showForwardAndHideBack();
-            showLeftAndRight();
-        } else if (start_left.style.display == "block") {
-            start.src = "images/start.jpg";
-            showImageAndHideImage(start_left.id, start.id);
-            showForwardAndHideBack();
-            showLeftAndRight();
-        } else if (sleft_forward.style.display == "block") {
-            start_left.src = "images/start_left.jpg";
-            showImageAndHideImage(sleft_forward.id, start_left.id);
-            showForwardAndBack();
-            hideLeftAndRight();
-        }
+ 
+    buttons.back.addEventListener("click", function () {
+       switch (true) {
+          case images.start_forward.style.display === "block":
+             start.src = "images/start.jpg";
+             showImageAndHideImage(images.start_forward.id, start.id);
+             showLeftAndRight();
+             showForwardAndHideBack();
+             break;
+          case images.start_right.style.display === "block":
+             start.src = "images/start.jpg";
+             showImageAndHideImage(images.start_right.id, start.id);
+             showForwardAndHideBack();
+             showLeftAndRight();
+             break;
+          case images.start_left.style.display === "block":
+             start.src = "images/start.jpg";
+             showImageAndHideImage(images.start_left.id, start.id);
+             showForwardAndHideBack();
+             showLeftAndRight();
+             break;
+          case images.sleft_forward.style.display === "block":
+             images.start_left.src = "images/start_left.jpg";
+             showImageAndHideImage(images.sleft_forward.id, images.start_left.id);
+             showForwardAndBack();
+             hideLeftAndRight();
+             break;
+          case images.start_toilet_map.style.display === "block":
+             start.src = "images/start.jpg";
+             showImageAndHideImage(images.start_toilet_map.id, start.id);
+             showForwardAndHideBack();
+             showLeftAndRight();
+             break;
+       }
     });
-
+ 
+    maps.toiletMap.addEventListener("click", function (event) {
+       if (event.target.tagName === "AREA") {
+          start.src = "images/areas/start_toilet.jpg";
+          showImageAndHideImage(start.id, images.start_toilet_map.id)
+          loadMapProperties();
+       }
+    });
+ 
     function hideLeftAndRight() {
-        left.style.display = "none";
-        right.style.display = "none";
+       buttons.left.style.display = "none";
+       buttons.right.style.display = "none";
     }
-
+ 
     function showForwardAndHideBack() {
-        forward.style.display = "block";
-        back.style.display = "none";
+        buttons.forward.style.display = "block";
+        buttons.back.style.display = "none";
     }
-
+ 
     function showBackAndHideForward() {
-        forward.style.display = "none";
-        back.style.display = "block";
+        buttons.forward.style.display = "none";
+        buttons.back.style.display = "block";
     }
-
+ 
     function showLeftAndRight() {
-        left.style.display = "block";
-        right.style.display = "block";
+        buttons.left.style.display = "block";
+        buttons.right.style.display = "block";
     }
-
+ 
     function showForwardAndBack() {
-        forward.style.display = "block";
-        back.style.display = "block";
+        buttons.forward.style.display = "block";
+        buttons.back.style.display = "block";
     }
 
-    function showImageAndHideImage(image1Id, image2Id) {
-        document.getElementById(image1Id).style.display = "none";
-        document.getElementById(image2Id).style.display = "block";
+    function loadMapProperties() {
+        buttons.forward.style.display = "none";
+        buttons.left.style.display = "none";
+        buttons.right.style.display = "none";
+        buttons.back.style.display = "block";
     }
-});
+ 
+    function showImageAndHideImage(image1Id, image2Id) {
+       document.getElementById(image1Id).style.display = "none";
+       document.getElementById(image2Id).style.display = "block";
+    }
+ });
