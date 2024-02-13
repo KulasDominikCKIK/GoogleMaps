@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
        "back": document.getElementById("back")
     };
  
- 
     var maps = {
        "toiletMap": document.querySelector('map[name="toilet"]')
     }
