@@ -16,7 +16,7 @@ body, html {
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-top: 20px solid rgba(128, 128, 128, 0.9);
+    border-top: 20px solid rgba(0, 0, 0, 0.9);
     cursor: pointer;
     display: block;
     user-select: none;
@@ -32,7 +32,7 @@ body, html {
     height: 0;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-right: 20px solid rgba(128, 128, 128, 0.9);
+    border-right: 20px solid rgba(0, 0, 0, 0.9);
     cursor: pointer;
     display: block;
     user-select: none;
@@ -48,7 +48,7 @@ body, html {
     height: 0;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-right: 20px solid rgba(128, 128, 128, 0.9);
+    border-right: 20px solid rgba(0, 0, 0, 0.9);
     cursor: pointer;
     display: block;
     user-select: none;
@@ -63,7 +63,7 @@ body, html {
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-top: 20px solid rgba(128, 128, 128, 0.9);
+    border-top: 20px solid rgba(0, 0, 0, 0.9);
     cursor: pointer;
     display: none;
     user-select: none;

@@ -4,17 +4,14 @@ This a project for my Programming class **@** CKIK
 
 # Last commit
 
-- Fixed that you can't select the buttons.
-- I realised I need to resize all the images to 1440x856 because if we are resizing the image in the css file then the map is not working properly.
-- I wrote the code to the map with an example so it's working now.
+- I made the ground floor with the school pictures
 
 # Plans
 
-- Go to school at the weekends and shoot some photos of the school.
+- Receive more picture and code it down too.
 
 # TODO
 
-- Shoot photos of the school and implement it in the code.
 - Do that if the user is pointing on a map then the cursor should be pointer.
 
 # Sources I used

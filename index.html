@@ -8,19 +8,36 @@
     <script src="function.js"></script>
 </head>
 <body>
-        <img src="images/start.jpg" usemap="#toilet" id="1">
-        <img src="images/start_left.jpg" alt="nincsen kep" id="2">
-        <img src="images/start_right.jpg" alt="nincsen kep" id="3">
-        <img src="images/start_forward.jpg" alt="nincsen kep" id="4">
-        <img src="images/sleft_forward.jpg" alt="nincsen kep" id="5">
-        <img src="images/areas/start_toilet.jpg" alt="nincsen kep" id="6">
+        <img src="images/gate.jpg" alt="nincsen kep" id="1">
+        <img src="images/lobby.jpg" alt="nincsen kep" id="2">
+        <img src="images/lobby_forward1.jpg" alt="nincsen kep" id="3">
+        <img src="images/lobby_forward2.jpg" alt="nincsen kep" id="4" usemap="#cafeteria_gymnasium">
+        <img src="images/lobby_left.jpg" alt="nincsen kep" id="5">
+        <img src="images/lobby_right1.jpg" alt="nincsen kep" id="8">
+        <img src="images/lobby_right_12.jpg" alt="nincsen kep" id="9" usemap="#class12">
+        <img src="images/lobby_right_14.jpg" alt="nincsen kep" id="11" usemap="#class14">
+
+        <img src="images/areas/cafeteria.jpg" alt="nincsen kep" id="6">
+        <img src="images/areas/gymnasium1.jpg" alt="nincsen kep" id="7">
+        <img src="images/areas/class_12.jpg" alt="nincsen kep" id="10">
+        <img src="images/areas/class_14.jpg" alt="nincsen kep" id="12">
+
         <div class="forward" id="forward"></div>
         <div class="left" id="left"></div>
         <div class="right" id="right"></div>
         <div class="back" id="back"></div>
 
-        <map name="toilet">
-            <area target="" alt="wc" title="wc" href="javascript:void(0);" coords="573,335,630,336,633,407,610,415,592,429,605,445,619,462,609,469,596,474,602,494,614,488,596,509,578,509,571,505,568,352,593,332,606,335,582,333" shape="poly">
+        <map name="cafeteria_gymnasium">
+            <area target="" alt="Ebédlő" title="Ebédlő" href="javascript:void(0);" coords="317,190,386,219,404,771,343,853" shape="poly" id="cafeteria">
+            <area target="" alt="Tesiterem1" title="Tesiterem1" href="javascript:void(0);" coords="646,299,728,301,724,482,647,483" shape="poly" id="gymnasium1">
+        </map>
+
+        <map name="class12">
+            <area target="" alt="12-es terem" title="12-es terem" href="javascript:void(0);" coords="876,183,1087,89,1081,532,1032,538,1027,853,883,850" shape="poly" id="class12">
+        </map>
+
+        <map name="class14">
+            <area target="" alt="14-es terem" title="14-es terem" href="javascript:void(0);" coords="792,187,1121,92,1101,549,1041,570,1034,855,786,852" shape="poly" id="class14">
         </map>
 </body>
 </html>
