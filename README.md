@@ -1,6 +1,6 @@
 # Description
 
-This a project for my Programming class **@** CKIK
+This a project for my Programming class **@** CKIK (This is the public stable version)
 
 # Last commit
 
