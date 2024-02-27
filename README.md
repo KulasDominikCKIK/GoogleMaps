@@ -1,6 +1,6 @@
 # Description
 
-This a project for my Programming class **@** CKIK (This is the development branch.)
+This a project for my Programming class **@** CKIK (This is the development branch)
 
 # Last commit
 
